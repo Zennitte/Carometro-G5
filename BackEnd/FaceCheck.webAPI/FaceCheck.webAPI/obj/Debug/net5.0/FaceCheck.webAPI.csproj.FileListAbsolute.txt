@@ -65,3 +65,5 @@ C:\Users\53961345856.INFOSCS\Desktop\Carometro\Carometro-G5\BackEnd\FaceCheck.we
 C:\Users\53961345856.INFOSCS\Desktop\Carometro\Carometro-G5\BackEnd\FaceCheck.webAPI\FaceCheck.webAPI\obj\Debug\net5.0\ref\FaceCheck.webAPI.dll
 C:\Users\53961345856.INFOSCS\Desktop\Carometro\Carometro-G5\BackEnd\FaceCheck.webAPI\FaceCheck.webAPI\obj\Debug\net5.0\FaceCheck.webAPI.pdb
 C:\Users\53961345856.INFOSCS\Desktop\Carometro\Carometro-G5\BackEnd\FaceCheck.webAPI\FaceCheck.webAPI\obj\Debug\net5.0\FaceCheck.webAPI.genruntimeconfig.cache
+C:\Users\53961345856.INFOSCS\Desktop\Carometro\Carometro-G5\BackEnd\FaceCheck.webAPI\FaceCheck.webAPI\bin\Debug\net5.0\FaceCheck.webAPI.xml
+C:\Users\53961345856.INFOSCS\Desktop\Carometro\Carometro-G5\BackEnd\FaceCheck.webAPI\FaceCheck.webAPI\obj\Debug\net5.0\FaceCheck.webAPI.xml
