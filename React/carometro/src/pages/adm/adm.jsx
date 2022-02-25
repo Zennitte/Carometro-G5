@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Footer() {
+export default function Adm() {
     return(
         <div>
             <h1>Adm</h1>

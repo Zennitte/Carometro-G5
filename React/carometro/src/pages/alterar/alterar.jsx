@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Footer() {
+export default function Alterar() {
     return(
         <div>
             <h1>Home</h1>

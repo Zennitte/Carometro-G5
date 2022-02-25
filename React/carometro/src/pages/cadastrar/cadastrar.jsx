@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Footer() {
+export default function Cadastro() {
     return(
         <div>
             <h1>Cadastro</h1>

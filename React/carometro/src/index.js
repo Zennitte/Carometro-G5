@@ -23,14 +23,14 @@ import reportWebVitals from './reportWebVitals';
 const PermissaoAdm = ({children}) => {
   return(
     usuarioAutenticado() && parseJwt().role === '1' ?
-      children: <Navigate to={Login}/>
+      children: <Navigate to="/login"/>
   )
 }
 
 const PermissaoColab = ({children}) => {
   return(
     usuarioAutenticado() && parseJwt().role === '2' ?
-      children: <Navigate to={Login}/>
+      children: <Navigate to="/login"/>
   )
 }
 
@@ -38,7 +38,8 @@ const routing = (
   <Router>
     <div>
       <Routes>
-        <Route exact path='login' element={<Login/>}/>
+        <Route exact path='/' element={<Login/>}/>
+        <Route path='login' element={<Login/>}/>
         <Route path='adm' element={<PermissaoAdm><Adm/></PermissaoAdm>}/>
         <Route path='home' element={<PermissaoColab><Home/></PermissaoColab>}/>
         <Route path='adm/home' element={<PermissaoAdm><Home/></PermissaoAdm>}/>
