@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import {
   Route,
   BrowserRouter as Router,
-  Navigate,
-  Routes
+  Redirect,
+  Switch,
 } from 'react-router-dom'
 
 import './index.css';
@@ -20,32 +20,44 @@ import Aluno from './pages/aluno/aluno'
 
 import reportWebVitals from './reportWebVitals';
 
-const PermissaoAdm = ({children}) => {
-  return(
-    usuarioAutenticado() && parseJwt().role === '1' ?
-      children: <Navigate to={Login}/>
-  )
-}
+const PermissaoAdm = ({ component: Component }) => (
+  <Route
+    render={(props) =>
+      usuarioAutenticado() && parseJwt().role === '1' ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to="login" />
+      )
+    }
+  />
+);
 
-const PermissaoColab = ({children}) => {
-  return(
-    usuarioAutenticado() && parseJwt().role === '2' ?
-      children: <Navigate to={Login}/>
-  )
-}
+const PermissaoColab = ({ component: Component }) => (
+  <Route
+    render={(props) =>
+      usuarioAutenticado() && parseJwt().role === '2' ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to="login" />
+      )
+    }
+  />
+);
+
 
 const routing = (
   <Router>
     <div>
-      <Routes>
-        <Route exact path='login' element={<Login/>}/>
-        <Route path='adm' element={<PermissaoAdm><Adm/></PermissaoAdm>}/>
-        <Route path='home' element={<PermissaoColab><Home/></PermissaoColab>}/>
-        <Route path='adm/home' element={<PermissaoAdm><Home/></PermissaoAdm>}/>
-        <Route path='adm/aluno' element={<PermissaoAdm><Aluno/></PermissaoAdm>}/>
-        <Route path='aluno' element={<PermissaoColab><Aluno/></PermissaoColab>}/>
-        <Navigate to={Login}/>
-      </Routes>
+    <Switch>
+        <Route exact path="/" component = {Login}/>
+        <Route path ="/login" component ={Login}/>
+        <PermissaoAdm path = "/adm" component = {Adm}/>
+        <PermissaoAdm path = "/adm/home" component={Home}/>
+        <PermissaoColab path = "/home" component={Home}/>
+        <PermissaoAdm path = "/adm/aluno" component={Aluno}/>
+        <PermissaoColab path = "/aluno" component={Aluno}/>
+        <Redirect to={Login}/>
+      </Switch>
     </div>
   </Router>
 )
