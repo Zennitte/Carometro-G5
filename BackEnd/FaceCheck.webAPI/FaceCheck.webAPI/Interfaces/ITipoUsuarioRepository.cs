@@ -10,6 +10,6 @@ namespace FaceCheck.webAPI.Interfaces
     {
         void Cadastrar(Tipousuario novoTipoUsuario);
 
-        List<Tipousuario> ListarTOdos();
+        List<Tipousuario> ListarTodos();
     }
 }

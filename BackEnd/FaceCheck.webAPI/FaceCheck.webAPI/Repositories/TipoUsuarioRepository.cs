@@ -1,5 +1,7 @@
-﻿using FaceCheck.webAPI.Domains;
+﻿using FaceCheck.webAPI.Context;
+using FaceCheck.webAPI.Domains;
 using FaceCheck.webAPI.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +11,18 @@ namespace FaceCheck.webAPI.Repositories
 {
     public class TipoUsuarioRepository : ITipoUsuarioRepository
     {
+        CarometroContext ctx = new();
         public void Cadastrar(Tipousuario novoTipoUsuario)
         {
-            throw new NotImplementedException();
+            ctx.Tipousuarios.Add(novoTipoUsuario);
+
+            ctx.SaveChanges();
         }
 
-        public List<Tipousuario> ListarTOdos()
+        public List<Tipousuario> ListarTodos()
         {
-            throw new NotImplementedException();
+            return ctx.Tipousuarios
+                .ToList();
         }
     }
 }

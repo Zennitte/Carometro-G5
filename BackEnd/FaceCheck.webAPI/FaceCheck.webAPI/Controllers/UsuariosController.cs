@@ -70,5 +70,20 @@ namespace FaceCheck.webAPI.Controllers
                 throw;
             }
         }
+
+        [HttpGet("{idUsuario}")]
+        [Authorize(Roles = "1")]
+        public IActionResult Encontrar(int id)
+        {
+            try
+            {
+                return Ok(_usuarioRepository.Encontrar(id));
+            }
+            catch (Exception erro)
+            {
+
+                return BadRequest(erro);
+            }
+        }
     }
 }
