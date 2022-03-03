@@ -1,4 +1,5 @@
 ﻿using FaceCheck.webAPI.Domains;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +15,16 @@ namespace FaceCheck.webAPI.Interfaces
 
         Aluno BuscarPorNome(string nome);
 
-        Aluno BuscarPorSala(int idSala);
+        List<Aluno> BuscarPorSala(int idSala);
 
         void Cadastrar(Aluno novoAluno);
 
-        void Atualizar(short idAluno, Aluno AlunoAtualizada);
+        void Atualizar(int idAluno, Aluno AlunoAtualizada);
 
         void Deletar(int idAluno);
+
+        void SalvarImagemDir(IFormFile foto, int idAluno);
+
+        string ConsultarImagemlDir(int idAluno);
     }
 }

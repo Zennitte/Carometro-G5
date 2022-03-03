@@ -1,4 +1,5 @@
 ﻿using FaceCheck.webAPI.Domains;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +15,11 @@ namespace FaceCheck.webAPI.Interfaces
 
         void Cadastrar(Sala novaSala);
 
-        void Atualizar(short idSala, Sala SalaAtualizada);
+        void Atualizar(int idSala, Sala SalaAtualizada);
 
         void Deletar(int idSala);
+
+
+
     }
 }

@@ -12,15 +12,15 @@ namespace FaceCheck.webAPI.Repositories
     {
         CarometroContext ctx = new();
 
-        public void Atualizar(short idSala, Sala SalaAtualizada)
+        public void Atualizar(int idSala, Sala SalaAtualizada)
         {
-            Sala salaBuscada = ctx.Salas.Find(idSala);
+            Sala salaBuscada = BuscarPorId(idSala);
 
             if (SalaAtualizada != null)
             {
                 salaBuscada.NomeSala = SalaAtualizada.NomeSala;
 
-                ctx.Salas.Update(SalaAtualizada);
+                ctx.Salas.Update(salaBuscada);
 
                 ctx.SaveChanges();
             }
