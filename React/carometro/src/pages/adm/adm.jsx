@@ -1,8 +1,10 @@
 import React from "react";
 import { useState } from "react";
 
-import logo from '../../assests/image/FaceChecklogo.svg'
-import '../../assests/css/adm.css'
+import logo from '../../assets/img/FaceCheck.svg'
+import '../../assets/css/adm.css'
+import Header from '../../components/header/header'
+import Footer from  '../../components/footer/footer'
 
 
 export default function Adm() {
@@ -14,6 +16,7 @@ export default function Adm() {
 
     return (
         <div>
+            <Header />
             <main className="fundo">
                 <div>
 
@@ -64,6 +67,7 @@ export default function Adm() {
                     >
                         <option value="0">Turmas</option>
                     </select>
+
                     <input
                     // className=""
                     type="datetime-local"
@@ -71,6 +75,7 @@ export default function Adm() {
                     // value={}
                     // onChange={}
                     />
+                    
                     {
                             isLoading === true && (
                                 <button
@@ -103,6 +108,7 @@ export default function Adm() {
                         }
                 </div>
             </main>
+                <Footer />
         </div>
     )
 }

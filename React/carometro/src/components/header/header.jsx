@@ -1,8 +1,8 @@
 import React from "react";
 
-import Logo from "../../assests/img/FaceCheck.svg";
+import Logo from "../../assets/img/FaceCheck.svg";
 
-import '../../assests/css/header.css'
+import '../../assets/css/header.css'
 
 export default function Header() {
   return (

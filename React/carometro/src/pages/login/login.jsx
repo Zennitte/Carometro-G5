@@ -4,8 +4,8 @@ import { useHistory } from "react-router-dom";
 
 import api from "../../services/api";
 
-import logo from '../../assests/image/FaceChecklogo.svg'
-import '../../assests/css/login.css'
+import logo from '../../assets/img/FaceCheck.svg'
+import '../../assets/css/login.css'
 
 
 export default function Login() {
