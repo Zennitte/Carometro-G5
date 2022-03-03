@@ -1,16 +1,17 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
+// import { useStatem, useEffect } from "react";
 import Header from '../../components/header/header'
 import Footer from "../../components/footer/footer";
 
 import '../../assests/css/home.css'
 
 export default function Home() {
-    const [manha, setManha] = useState([]);
-    const [tarde, setTarde] = useState([]);
+    // const [manha, setManha] = useState([]);
+    // const [tarde, setTarde] = useState([]);
 
-    async function listaManha(params) {
+    // async function listaManha(params) {
         
-    }
+    // }
 
     return(
        <>
