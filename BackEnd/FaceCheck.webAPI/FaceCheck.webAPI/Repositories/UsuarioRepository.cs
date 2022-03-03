@@ -1,6 +1,7 @@
 ﻿using FaceCheck.webAPI.Context;
 using FaceCheck.webAPI.Domains;
 using FaceCheck.webAPI.Interfaces;
+using FaceCheck.webAPI.Utils;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,26 @@ namespace FaceCheck.webAPI.Repositories
 
         public Usuario Login(string email, string senha)
         {
+            var usuario = ctx.Usuarios.FirstOrDefault(u => u.Email == email);
+
+            if (usuario != null)
+            {
+
+                if (usuario.Senha == senha)
+                {
+                    usuario.Senha = Criptografia.GerarHash(usuario.Senha);
+                    ctx.SaveChanges();
+                }
+
+                bool confere = Criptografia.Comparar(senha, usuario.Senha);
+
+                if (confere)
+                {
+                    return usuario;
+                }
+
+
+            }
             return ctx.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
         }
     }

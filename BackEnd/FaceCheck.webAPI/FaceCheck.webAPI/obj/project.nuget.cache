@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "PDZlNWzNc9Gf2KJ6Vmu+nAEhh3uakJP8RtdBIewMgDDUTHaopSuhWMxA0fOoTHYhDow2ynuKAzmih80FkNuR6A==",
+  "dgSpecHash": "Km+geLa3MqvdlBcsQGs7gAonpXmZS+Vgo7+PMpHOhpbMCVAplkuY+37DV7+9P2YCCXwSO5zRGb1C8RUt2t1PIA==",
   "success": true,
   "projectFilePath": "C:\\Users\\53961345856.INFOSCS\\Desktop\\Carometro\\Carometro-G5\\BackEnd\\FaceCheck.webAPI\\FaceCheck.webAPI\\FaceCheck.webAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\53961345856.INFOSCS\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\53961345856.INFOSCS\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\53961345856.INFOSCS\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.14\\microsoft.aspnetcore.authentication.jwtbearer.5.0.14.nupkg.sha512",
     "C:\\Users\\53961345856.INFOSCS\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.14\\microsoft.aspnetcore.jsonpatch.5.0.14.nupkg.sha512",
