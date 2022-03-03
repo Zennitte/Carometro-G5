@@ -14,14 +14,15 @@
 }
 
 .logo{
-    margin-top: 15vh;
+    margin-top: 10vh;
+    margin-left: 3vw;
 }
 
 .inputs{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-left: 39vw;
+    margin-left: 39vmax;
     margin-top: 10vh;
 }
 
@@ -68,10 +69,15 @@
     color: white;
     background-color: #183861;
     border: none;
-    margin-left: 5vh;
+    margin-left: 4vh;
 }
 .btn:hover{
     background-color: #D5E1FA;
     cursor: pointer;
     color:  #183861;
+}
+
+
+.red{
+    color:  red;
 }

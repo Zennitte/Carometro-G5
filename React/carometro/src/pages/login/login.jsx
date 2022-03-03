@@ -24,8 +24,8 @@ export default function Login() {
         setIsLoading(true)
 
         api.post('/Login', {
-            emailUsuario: email,
-            senhaUsuario: senha
+            email: email,
+            senha: senha
         })
 
             .then((response) => {
@@ -38,7 +38,7 @@ export default function Login() {
 
                     setIsLoading(false)
 
-                    history.push('/home')
+                    history.push('/adm')
                 }
             })
             .catch(erro => {
@@ -62,8 +62,9 @@ export default function Login() {
                         alt="Logo"
                     />
                 </div>
-                <form onChange={efetuarLogin} >
+                <form onSubmit={efetuarLogin} >
                     <div className="inputs">
+
                         <input
                             type="email"
                             name="email"
