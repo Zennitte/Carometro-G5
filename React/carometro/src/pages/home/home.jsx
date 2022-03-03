@@ -3,7 +3,7 @@ import React from "react";
 import Header from '../../components/header/header'
 import Footer from "../../components/footer/footer";
 
-import '../../assests/css/home.css'
+import '../../assets/css/home.css'
 
 export default function Home() {
     // const [manha, setManha] = useState([]);
