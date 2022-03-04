@@ -54,6 +54,7 @@ const routing = (
         <PermissaoAdm path = "/adm" component = {Adm}/>
         <PermissaoAdm path = "/adm/home" component={Home}/>
         <Route path="/home" component={Home}/>
+        <Route path = "/aluno" component={Aluno}/>
         {/* <PermissaoColab path = "/home" component={Home}/> */}
         <PermissaoAdm path = "/adm/aluno" component={Aluno}/>
         <PermissaoColab path = "/aluno" component={Aluno}/>

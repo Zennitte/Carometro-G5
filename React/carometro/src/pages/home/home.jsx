@@ -5,11 +5,22 @@ import Footer from "../../components/footer/footer";
 
 import '../../assets/css/home.css'
 
+import api from "../../services/api";
+
 export default function Home() {
     // const [manha, setManha] = useState([]);
     // const [tarde, setTarde] = useState([]);
 
-    // async function listaManha(params) {
+    async function listaManha(params) {
+        await api.get('/salas')
+            .then(resposta => {
+                if (resposta.status === 200) {
+                    
+                }
+            })
+    }
+
+    // async function listaTarde() {
         
     // }
 
