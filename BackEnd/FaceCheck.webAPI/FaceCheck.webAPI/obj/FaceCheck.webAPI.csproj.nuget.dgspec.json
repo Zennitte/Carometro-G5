@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\52750417805.INFOSCS\\Desktop\\Carometro-G5\\BackEnd\\FaceCheck.webAPI\\FaceCheck.webAPI\\FaceCheck.webAPI.csproj": {}
+    "C:\\Users\\53961345856.INFOSCS\\Desktop\\Carometro-G5\\BackEnd\\FaceCheck.webAPI\\FaceCheck.webAPI\\FaceCheck.webAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\52750417805.INFOSCS\\Desktop\\Carometro-G5\\BackEnd\\FaceCheck.webAPI\\FaceCheck.webAPI\\FaceCheck.webAPI.csproj": {
+    "C:\\Users\\53961345856.INFOSCS\\Desktop\\Carometro-G5\\BackEnd\\FaceCheck.webAPI\\FaceCheck.webAPI\\FaceCheck.webAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\52750417805.INFOSCS\\Desktop\\Carometro-G5\\BackEnd\\FaceCheck.webAPI\\FaceCheck.webAPI\\FaceCheck.webAPI.csproj",
+        "projectUniqueName": "C:\\Users\\53961345856.INFOSCS\\Desktop\\Carometro-G5\\BackEnd\\FaceCheck.webAPI\\FaceCheck.webAPI\\FaceCheck.webAPI.csproj",
         "projectName": "FaceCheck.webAPI",
-        "projectPath": "C:\\Users\\52750417805.INFOSCS\\Desktop\\Carometro-G5\\BackEnd\\FaceCheck.webAPI\\FaceCheck.webAPI\\FaceCheck.webAPI.csproj",
-        "packagesPath": "C:\\Users\\52750417805.INFOSCS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\52750417805.INFOSCS\\Desktop\\Carometro-G5\\BackEnd\\FaceCheck.webAPI\\FaceCheck.webAPI\\obj\\",
+        "projectPath": "C:\\Users\\53961345856.INFOSCS\\Desktop\\Carometro-G5\\BackEnd\\FaceCheck.webAPI\\FaceCheck.webAPI\\FaceCheck.webAPI.csproj",
+        "packagesPath": "C:\\Users\\53961345856.INFOSCS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\53961345856.INFOSCS\\Desktop\\Carometro-G5\\BackEnd\\FaceCheck.webAPI\\FaceCheck.webAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\52750417805.INFOSCS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\53961345856.INFOSCS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -42,11 +42,7 @@
           "dependencies": {
             "BCrypt.Net-Next": {
               "target": "Package",
-<<<<<<< HEAD
               "version": "[4.0.2, )"
-=======
-              "version": "[4.0.3, )"
->>>>>>> a4cd5eeff5512276de4b73c3b463b5146a063f7c
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -97,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -7,8 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = FaceCheck.webAPI
-<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\53961345856.INFOSCS\Desktop\Carometro-G5\BackEnd\FaceCheck.webAPI\FaceCheck.webAPI\
-=======
-build_property.ProjectDir = C:\Users\52750417805.INFOSCS\Desktop\Carometro-G5\BackEnd\FaceCheck.webAPI\FaceCheck.webAPI\
->>>>>>> a4cd5eeff5512276de4b73c3b463b5146a063f7c
