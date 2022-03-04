@@ -19,6 +19,9 @@ import Aluno from './pages/aluno/aluno'
 
 
 import reportWebVitals from './reportWebVitals';
+import Cadastrar from './pages/cadastrar/cadastrar';
+import Excluir from './pages/excluir/excluir';
+import Alterar from './pages/alterar/alterar';
 
 const PermissaoAdm = ({ component: Component }) => (
   <Route
@@ -52,7 +55,10 @@ const routing = (
         <Route exact path="/" component = {Login}/>
         <Route path ="/login" component ={Login}/>
         <PermissaoAdm path = "/adm" component = {Adm}/>
+        <PermissaoAdm path = "/cadastrar" component = {Cadastrar}/>
         <PermissaoAdm path = "/adm/home" component={Home}/>
+        <PermissaoAdm path = "/alterar" component={Alterar}/>
+        <PermissaoAdm path = "/excluir" component={Excluir}/>
         <PermissaoColab path = "/home" component={Home}/>
         <PermissaoAdm path = "/adm/aluno" component={Aluno}/>
         <PermissaoColab path = "/aluno" component={Aluno}/>

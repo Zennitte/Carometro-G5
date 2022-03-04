@@ -1,6 +1,54 @@
-.fundo{
-    background-color: #000000;
-    width: 100vw;
-    height: 100vh;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
+
+.foto_perfil{
+    margin-right: 20px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+.input{
+    height: 6vh;
+    margin-top: 4vw;
+    width: 20vw;
+    border-radius: 20vw;
+    font-size: 1vw;
+    color: white;
+    background-color: #3D8DF2;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+}
+
+.input_container{
+    display: flex;
+    justify-content: flex-end;   
+    flex-direction: column;
+    margin-right: 150px;
+}
+
+ .container_adm{
+     background-color: #2E2E2E;
+     height: 850px;
+     display: flex;
+     align-items: center;
+     justify-content: end;  
+ }  
+
+ .btn_cadastro{
+    height: 6vh;
+    margin-top: 4vw;
+    width: 20vw;
+    border-radius: 20vw;
+    font-size: 1.5vw;
+    color: white;
+    background-color: #3D8DF2;
+    border: none;
+}
+
+
 

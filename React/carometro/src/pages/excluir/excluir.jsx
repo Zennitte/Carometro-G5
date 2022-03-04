@@ -7,7 +7,7 @@ import Header from '../../components/header/header'
 import Footer from '../../components/footer/footer'
 
 
-export default function Adm() {
+export default function Excluir() {
     const [isLoading, setIsLoading] = useState(false);
     const [nome, setNome] = useState('');
     const [periodo, setPeriodo] = useState('');
@@ -17,7 +17,7 @@ export default function Adm() {
     return (
         <>
             <Header />
-            {/* <section className="container_adm">
+            <section className="container_adm">
                 <div>
                             <img
                                 className="foto_perfil"
@@ -105,19 +105,13 @@ export default function Adm() {
                                             : ''
                                     }
                                 >
-                                    Cadastrar
+                                    Excluir
                                 </button>
                             )
                         }
                     </form>
                 </div>
-            </section> */}
-
-            <div>
-                <a className="input" href="/cadastrar">Cadastrar</a>
-                <a className="input" href="/alterar">Alterar</a>
-                <a className="input" href="/excluir">Excluir</a>
-            </div>
+            </section>
             <Footer />
         </>
     )
