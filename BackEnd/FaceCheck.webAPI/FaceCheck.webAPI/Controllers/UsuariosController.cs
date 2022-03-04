@@ -27,6 +27,7 @@ namespace FaceCheck.webAPI.Controllers
 
         [HttpPost]
         [Authorize(Roles = "1")]
+        
         public IActionResult Cadastrar(Usuario novoUsuario)
         {
             try
@@ -44,6 +45,7 @@ namespace FaceCheck.webAPI.Controllers
 
         [HttpGet]
         [Authorize(Roles = "1")]
+       
         public IActionResult ListarTodos()
         {
             try

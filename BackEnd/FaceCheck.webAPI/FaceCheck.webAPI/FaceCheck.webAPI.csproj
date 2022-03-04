@@ -23,4 +23,8 @@
 		<NoWarn>$(NoWarn);1591</NoWarn>
 	</PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Image\" />
+  </ItemGroup>
+
 </Project>
