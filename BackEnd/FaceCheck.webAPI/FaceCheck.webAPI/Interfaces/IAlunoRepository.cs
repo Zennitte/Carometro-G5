@@ -23,7 +23,7 @@ namespace FaceCheck.webAPI.Interfaces
 
         void Deletar(int idAluno);
 
-        void SalvarImagemDir(IFormFile foto, int idAluno);
+        string SalvarImagemDir(IFormFile foto, int idAluno);
 
         string ConsultarImagemlDir(int idAluno);
     }

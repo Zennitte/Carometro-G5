@@ -57,13 +57,14 @@ namespace FaceCheck.webAPI.Repositories
 
         public string ConsultarImagemlDir(int idAluno)
         {
-            string nome_novo = idAluno.ToString() + ".png";
-            string caminho = Path.Combine("Perfil", nome_novo);
+            string nome = idAluno.ToString() + ".png";
+
+            string caminho = Path.Combine("imagem", nome);
 
             if (File.Exists(caminho))
             {
-                
                 byte[] bytesArquivo = File.ReadAllBytes(caminho);
+
                 return Convert.ToBase64String(bytesArquivo);
             }
 
@@ -82,15 +83,36 @@ namespace FaceCheck.webAPI.Repositories
             return ctx.Alunos.ToList();
         }
 
-        public void SalvarImagemDir(IFormFile foto, int idAluno)
+        public string SalvarImagemDir(IFormFile foto, int idAluno)
         {
-            string nome_novo = idAluno.ToString() + ".png";
+            string arquivo = foto.FileName.Split('.').Last();
 
-            using (var stream = new FileStream(Path.Combine("perfil", nome_novo), FileMode.Create))
+            if (arquivo == "png")
             {
-                foto.CopyTo(stream);
+                string nome = idAluno.ToString() + ".png";
+
+                using (var strem = new FileStream(Path.Combine("imagem", nome), FileMode.Create))
+                {
+                    foto.CopyTo(strem);
+                }
+
+                return " imagem salva! ";
             }
 
+            if (arquivo == "jpg")
+            {
+                string nome = idAluno.ToString() + ".jpg";
+
+                using (var strem = new FileStream(Path.Combine("imagem", nome), FileMode.Create))
+                {
+                    foto.CopyTo(strem);
+                }
+
+                return "imagem salva! ";
+            }
+
+            return null;
         }
     }
-}
+   }
+

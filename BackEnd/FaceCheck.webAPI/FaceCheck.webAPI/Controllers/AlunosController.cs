@@ -126,41 +126,50 @@ namespace FaceCheck.webAPI.Controllers
             }
 
         }
-        [HttpPost("imagem/dir")]
-        public IActionResult postDIR(IFormFile arquivo)
+        [HttpPost("imagem")]
+        public IActionResult PostarDir(IFormFile arquivo)
         {
             try
             {
-               
-                if (arquivo.Length > 50000) 
-                    return BadRequest(new { mensagem = "O tamanho máximo da imagem foi atingido." });
+                //Analisa se tamanho do arquivo é maior que 5MB
+                if (arquivo.Length > 5000000)
+                {
+                    return BadRequest(new { mensagem = "O tamanho máximo da imagem é de 5MB!" });
+                }
 
                 string extensao = arquivo.FileName.Split('.').Last();
+                if (extensao != "png" && extensao != "jpg")
+                {
+                    return BadRequest(new { mensagem = "Apenas arquivos .png ou .jpg são permitidos!" });
+                }
 
-                if (extensao != "png")
-                    return BadRequest(new { mensagem = "Apenas arquivos .png são permitidos." });
+                int IdUsuario = Convert.ToInt32(HttpContext.User.Claims.First(u => u.Type == JwtRegisteredClaimNames.Jti).Value);
 
+                string resposta = _alunoRepository.SalvarImagemDir(arquivo, IdUsuario);
 
-                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                if (resposta == null)
+                {
+                    return BadRequest("Não foi possível salvar a imagem!");
+                }
 
-                _alunoRepository.SalvarImagemDir(arquivo, idUsuario);
 
                 return Ok();
 
             }
-            catch (Exception ex)
+            catch (Exception erro)
             {
-                return BadRequest(ex.Message);
+
+                return BadRequest(erro.Message);
             }
 
         }
 
-        [HttpGet("imagem/dir")]
+
+        [HttpGet("/consultarimagem")]
         public IActionResult getDIR()
         {
             try
             {
-
                 int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
 
                 string base64 = _alunoRepository.ConsultarImagemlDir(idUsuario);
@@ -173,7 +182,6 @@ namespace FaceCheck.webAPI.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
 
     }
 }
