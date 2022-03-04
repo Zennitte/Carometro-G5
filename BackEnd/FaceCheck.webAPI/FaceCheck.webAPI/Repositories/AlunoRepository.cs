@@ -91,7 +91,7 @@ namespace FaceCheck.webAPI.Repositories
             {
                 string nome = idAluno.ToString() + ".png";
 
-                using (var strem = new FileStream(Path.Combine("imagem", nome), FileMode.Create))
+                using (var strem = new FileStream(Path.Combine("Image", nome), FileMode.Create))
                 {
                     foto.CopyTo(strem);
                 }
@@ -103,7 +103,7 @@ namespace FaceCheck.webAPI.Repositories
             {
                 string nome = idAluno.ToString() + ".jpg";
 
-                using (var strem = new FileStream(Path.Combine("imagem", nome), FileMode.Create))
+                using (var strem = new FileStream(Path.Combine("Image", nome), FileMode.Create))
                 {
                     foto.CopyTo(strem);
                 }

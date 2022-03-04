@@ -273,3 +273,4 @@ C:\Users\User1\Desktop\Carometro-G5tedsz\BackEnd\FaceCheck.webAPI\FaceCheck.webA
 C:\Users\User1\Desktop\Carometro-G5tedsz\BackEnd\FaceCheck.webAPI\FaceCheck.webAPI\obj\Debug\net5.0\FaceCheck.webAPI.RazorTargetAssemblyInfo.cache
 C:\Users\User1\Desktop\Carometro-G5tedsz\BackEnd\FaceCheck.webAPI\FaceCheck.webAPI\obj\Debug\net5.0\FaceCheck.webAPI.csproj.CopyComplete
 C:\Users\User1\Desktop\Carometro-G5tedsz\BackEnd\FaceCheck.webAPI\FaceCheck.webAPI\obj\Debug\net5.0\FaceCheck.webAPI.genruntimeconfig.cache
+C:\Users\52750417805.INFOSCS\Desktop\Carometro-G5\BackEnd\FaceCheck.webAPI\FaceCheck.webAPI\bin\Debug\net5.0\BCrypt.Net-Next.dll
