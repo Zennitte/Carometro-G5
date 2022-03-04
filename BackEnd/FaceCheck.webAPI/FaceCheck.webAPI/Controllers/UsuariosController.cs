@@ -1,6 +1,7 @@
 ﻿using FaceCheck.webAPI.Domains;
 using FaceCheck.webAPI.Interfaces;
 using FaceCheck.webAPI.Repositories;
+using FaceCheck.webAPI.Utils;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -30,6 +31,7 @@ namespace FaceCheck.webAPI.Controllers
         {
             try
             {
+                novoUsuario.Senha = Criptografia.GerarHash(novoUsuario.Senha);
                 _usuarioRepository.Cadastrar(novoUsuario);
                 return StatusCode(201);
             }

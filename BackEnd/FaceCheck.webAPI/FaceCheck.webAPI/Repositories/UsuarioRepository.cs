@@ -47,7 +47,6 @@ namespace FaceCheck.webAPI.Repositories
 
             if (usuario != null)
             {
-
                 if (usuario.Senha == senha)
                 {
                     usuario.Senha = Criptografia.GerarHash(usuario.Senha);
@@ -57,13 +56,13 @@ namespace FaceCheck.webAPI.Repositories
                 bool confere = Criptografia.Comparar(senha, usuario.Senha);
 
                 if (confere)
-                {
                     return usuario;
-                }
-
 
             }
-            return ctx.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
+
+            return null;
+
         }
+
     }
 }
