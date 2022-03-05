@@ -1,19 +1,26 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-.foto_perfil{
-    margin-right: 20px;
+.foto_perfil {
+    /* margin-right: 20px; */
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
+    width: 300px;
+    height: 300px;
 }
 
-.input{
+.posicao_foto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.input {
     height: 6vh;
-    margin-top: 4vw;
+    /* margin-top: 2vw; */
     width: 20vw;
     border-radius: 20vw;
     font-size: 1vw;
@@ -22,24 +29,23 @@
     border: none;
     padding: 15px;
     font-size: 16px;
+    position: absolut;
+    margin-top: 3vw;
 }
 
-.input_container{
+.input_container {
     display: flex;
-    justify-content: flex-end;   
+    align-items: flex-end;
     flex-direction: column;
     margin-right: 150px;
 }
 
- .container_adm{
-     background-color: #2E2E2E;
-     height: 850px;
-     display: flex;
-     align-items: center;
-     justify-content: end;  
- }  
+.container_adm {
+    background-color: #2E2E2E;
+    height: 579px;
+}
 
- .btn_cadastro{
+.btn_cadastro {
     height: 6vh;
     margin-top: 4vw;
     width: 20vw;
@@ -50,5 +56,9 @@
     border: none;
 }
 
+.display{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 500px;
 
-
+}
