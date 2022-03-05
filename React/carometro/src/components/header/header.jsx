@@ -2,8 +2,6 @@ import React from "react";
 
 import Logo from "../../assets/img/FaceCheck.svg";
 
-import { usuarioAutenticado } from "../../services/auth";
-
 import { useHistory } from "react-router-dom";
 
 import "../../assets/css/header.css";
