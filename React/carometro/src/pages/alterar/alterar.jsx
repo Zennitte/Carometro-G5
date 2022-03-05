@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 
+<<<<<<< HEAD
 import foto_perfil from '../../assets/img/foto_perfil.png'
 import '../../assets/css/adm.css'
 import Header from '../../components/header/header'
@@ -161,6 +162,12 @@ export default function Cadastrar() {
                 </div>
             </section>
             <Footer />
+=======
+export default function Alterar() {
+    return(
+        <div>
+            <h1>Home</h1>
+>>>>>>> abe2f2ec3a55a6f524ddb0e36cbac09bc3a8d9a9
         </div>
     )
 }

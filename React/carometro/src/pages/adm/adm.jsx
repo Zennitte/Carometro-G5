@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
+<<<<<<< HEAD
 import foto_perfil from '../../assets/img/foto_perfil.png'
 import '../../assets/css/adm.css'
 import Header from '../../components/header/header'
@@ -120,5 +121,12 @@ export default function Adm() {
             </div>
             <Footer />
         </>
+=======
+export default function Adm() {
+    return(
+        <div>
+            <h1>Adm</h1>
+        </div>
+>>>>>>> abe2f2ec3a55a6f524ddb0e36cbac09bc3a8d9a9
     )
 }
