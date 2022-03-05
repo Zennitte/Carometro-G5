@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-
-<<<<<<< HEAD
 import foto_perfil from '../../assets/img/foto_perfil.png'
 import '../../assets/css/adm.css'
 import Header from '../../components/header/header'
 import Footer from '../../components/footer/footer'
 import api from "../../services/api"
+import { Sidebar } from "../../components/sidebar/SideBar";
 
 
 
@@ -76,6 +75,7 @@ export default function Cadastrar() {
     return (
         <div >
             <Header />
+            <Sidebar />
             <section className="container_adm" >
                 <div >
 
@@ -107,14 +107,14 @@ export default function Cadastrar() {
                                 onChange={(campo) => setIdRa(campo.target.value)}
                             />
 
-                            {/* <input
+                            <input
                                 className="input"
                                 type="file"
                                 name="arquivo"
                                 placeholder="Foto do Aluno"
                             // value={}
                             // onChange={}                
-                            /> */}
+                            />
 
                             <select
                                 className="input"
@@ -162,12 +162,6 @@ export default function Cadastrar() {
                 </div>
             </section>
             <Footer />
-=======
-export default function Alterar() {
-    return(
-        <div>
-            <h1>Home</h1>
->>>>>>> abe2f2ec3a55a6f524ddb0e36cbac09bc3a8d9a9
         </div>
     )
 }

@@ -54,18 +54,12 @@ const routing = (
     <Switch>
         <Route exact path="/" component = {Login}/>
         <Route path ="/login" component ={Login}/>
-        <PermissaoAdm path = "/adm" component = {Adm}/>
+        <PermissaoAdm exact path = "/adm" component = {Adm}/>
         <PermissaoAdm path = "/cadastrar" component = {Cadastrar}/>
-        <PermissaoAdm path = "/adm/home" component={Home}/>
-<<<<<<< HEAD
+        <PermissaoAdm  path = "/adm/home" component={Home}/>
         <PermissaoAdm path = "/alterar" component={Alterar}/>
         <PermissaoAdm path = "/excluir" component={Excluir}/>
         <PermissaoColab path = "/home" component={Home}/>
-=======
-        <Route path="/home" component={Home}/>
-        <Route path = "/aluno" component={Aluno}/>
-        {/* <PermissaoColab path = "/home" component={Home}/> */}
->>>>>>> abe2f2ec3a55a6f524ddb0e36cbac09bc3a8d9a9
         <PermissaoAdm path = "/adm/aluno" component={Aluno}/>
         <PermissaoColab path = "/aluno" component={Aluno}/>
         <Route path="/adm/login" component={Login}/>

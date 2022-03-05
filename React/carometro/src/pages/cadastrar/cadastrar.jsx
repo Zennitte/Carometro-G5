@@ -6,6 +6,7 @@ import '../../assets/css/adm.css'
 import Header from '../../components/header/header'
 import Footer from '../../components/footer/footer'
 import api from "../../services/api"
+import { Sidebar } from "../../components/sidebar/SideBar";
 
 
 
@@ -68,6 +69,7 @@ export default function Cadastrar() {
     return (
         <div >
             <Header />
+            <Sidebar />
             <section className="container_adm" >
                 <div >
 

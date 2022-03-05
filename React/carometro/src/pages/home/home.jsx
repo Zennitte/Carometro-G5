@@ -4,15 +4,6 @@ import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
 import {Sidebar} from "../../components/sidebar/SideBar"
 
-<<<<<<< HEAD
-export default function Home() {
-    return(
-        <div>
-            <h1>Home</h1>
-        </div>
-    )
-}
-=======
 import "../../assets/css/home.css";
 
 import api from "../../services/api";
@@ -86,4 +77,3 @@ export default function Home() {
     </>
   );
 }
->>>>>>> abe2f2ec3a55a6f524ddb0e36cbac09bc3a8d9a9

@@ -1,132 +1,80 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Header from "../../components/header/header";
+import Footer from "../../components/footer/footer";
+import {Sidebar} from "../../components/sidebar/SideBar"
 
-<<<<<<< HEAD
-import foto_perfil from '../../assets/img/foto_perfil.png'
-import '../../assets/css/adm.css'
-import Header from '../../components/header/header'
-import Footer from '../../components/footer/footer'
+import "../../assets/css/home.css";
 
+import api from "../../services/api";
 
-export default function Adm() {
-    const [isLoading, setIsLoading] = useState(false);
-    const [nome, setNome] = useState('');
-    const [periodo, setPeriodo] = useState('');
+export default function Home() {
+  const [filtroManha, setFiltroManha] = useState([]);
+  const [filtroTarde, setFiltroTarde] = useState([]);
+  const [manha, setManha] = useState([]);
+  const [tarde, setTarde] = useState([]);
 
+  function listaManha(params) {
+    api
+      .get("/Salas")
+      .then((resposta) => {
+        if (resposta.status === 200) {
+          setFiltroManha(resposta);
 
+          setManha(
+            filtroManha.filter((sala) => {
+              return sala.id === 1;
+            })
+          );
 
-    return (
-        <>
-            <Header />
-            {/* <section className="container_adm">
-                <div>
-                            <img
-                                className="foto_perfil"
-                                src={foto_perfil}
-                                alt="Adicione a sua foto"
-                            />
-                    <form className="input_container">
+          console.log(manha);
+        }
+      })
+      .catch((erro) => console.log(erro));
+  }
 
-                        <div className="foto">
+  async function listaTarde() {
+    await api
+      .get("/Salas")
+      .then((resposta) => {
+        if (resposta.status === 200) {
+          setTarde(resposta);
+        }
+      })
+      .catch((erro) => console.log(erro));
+  }
 
+  useEffect(listaManha);
+
+  return (
+    <>  
+      <Header />
+      <Sidebar />
+      <section className="container_home">
+        <h2 className="titulo_periodo" style={{ marginTop: 50 }}>
+          Período Tarde
+        </h2>
+        {/* <div>
+          {manha.map((sala) => {
+            return (
+              <div key={sala.idSala}>
+                <h3>{sala.nomeSala}</h3>
+              </div>
+            );
+          })}
+        </div> */}
+        <h2 className="titulo_periodo">Período Manhã</h2>
+        {/* <div>
+                {list.map((sala) =>{
+                    return(
+                        <div key={sala.idSala}>
+                            <h3>{sala.nomeSala}</h3>
                         </div>
-
-                       
-                        
-                        <input
-                            className="input"
-                            type="name"
-                            name="nome"
-                            placeholder="Nome do Aluno"
-                        // value={}
-                        // onChange={}                
-                        />
-
-                        <input
-                            className="input"
-                            type="file"
-                            name="arquivo"
-                            placeholder="Foto do Aluno"
-                        // value={}
-                        // onChange={}                
-                        />
-
-                        <select
-                            className="input"
-                            name="Turma"
-                        // value={}
-                        // onChange={}
-                        >
-                            <option value="0">Turmas</option>
-                        </select>
-
-                        <select
-                            className="input"
-                            name="periodo"
-                        // value={}
-                        // onChange={}
-                        >
-                            <option value="0">Periodo</option>
-                        </select>
-
-
-
-
-                        <input
-                            className="input"
-                            type="datetime-local"
-                            name="dataDeNascimento"
-                        // value={}
-                        // onChange={}
-                        />
-
-                        {
-                            isLoading === true && (
-                                <button
-                                    type="submit"
-                                    disabled
-                                    className="btn btn_cadastro"
-                                    id=""
-                                >
-                                    Loading...
-                                </button>
-                            )
-                        }
-
-                        {
-
-                            isLoading === false && (
-                                <button
-                                    className="btn btn_cadastro"
-                                    id=""
-                                    type="submit"
-                                    disabled={
-                                        nome === '' || periodo === ''
-                                            ? 'none'
-                                            : ''
-                                    }
-                                >
-                                    Cadastrar
-                                </button>
-                            )
-                        }
-                    </form>
-                </div>
-            </section> */}
-
-            <div>
-                <a className="input" href="/cadastrar">Cadastrar</a>
-                <a className="input" href="/alterar">Alterar</a>
-                <a className="input" href="/excluir">Excluir</a>
-            </div>
-            <Footer />
-        </>
-=======
-export default function Adm() {
-    return(
-        <div>
-            <h1>Adm</h1>
-        </div>
->>>>>>> abe2f2ec3a55a6f524ddb0e36cbac09bc3a8d9a9
-    )
+                    )
+                })}
+            </div> */}
+      </section>
+      <Footer />
+    </>
+  );
 }

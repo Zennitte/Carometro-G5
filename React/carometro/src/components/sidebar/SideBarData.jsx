@@ -9,12 +9,12 @@ export const SideBarData = [
     {
         title: "Home",
         icon: <HomeIcon/>,
-        link: "/adm/home"
+        link: "/adm"
     },
     {
         title: "Cadastro",
         icon: <CreateIcon/>,
-        link: "/adm"
+        link: "/cadastrar"
     },
     {
         title: "Alterar",

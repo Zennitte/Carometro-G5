@@ -42,7 +42,7 @@
 
 .container_adm {
     background-color: #2E2E2E;
-    height: 579px;
+    height: 850px;
 }
 
 .btn_cadastro {
@@ -53,6 +53,17 @@
     font-size: 1.5vw;
     color: white;
     background-color: #3D8DF2;
+    border: none;
+}
+
+.btn_excluir {
+    height: 6vh;
+    margin-top: 4vw;
+    width: 20vw;
+    border-radius: 20vw;
+    font-size: 1.5vw;
+    color: white;
+    background-color: red;
     border: none;
 }
 

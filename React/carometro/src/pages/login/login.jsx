@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-<<<<<<< HEAD
 import api from "../../services/api";
 
 import logo from '../../assets/img/FaceCheck.svg'
@@ -119,12 +118,6 @@ export default function Login() {
                     </div>
                 </form>
             </main>
-=======
-export default function Login() {
-    return(
-        <div>
-            <h1>Login</h1>
->>>>>>> abe2f2ec3a55a6f524ddb0e36cbac09bc3a8d9a9
         </div>
     )
 }

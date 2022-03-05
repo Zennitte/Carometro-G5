@@ -1,28 +1,59 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
-
 import foto_perfil from '../../assets/img/foto_perfil.png'
 import '../../assets/css/adm.css'
 import Header from '../../components/header/header'
 import Footer from '../../components/footer/footer'
-// import api from "../../services/api"
+import api from "../../services/api"
+import { Sidebar } from "../../components/sidebar/SideBar";
 
 
 
-export default function Excluir() {
-    const [isLoading, setIsLoading] = useState(false);
-    const [nome, setNome] = useState('');
-    const [periodo, setPeriodo] = useState('');
-    
+export default function Cadastrar() {
+    const [isLoading, ] = useState(false);
+    const [idAlunos, setIdAlunos] = useState(0)
+    const [listaAlunos, setListaAlunos] = useState([])
 
+
+    function BuscarAlunos() {
+        api('/Alunos', {
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+            }
+        })
+
+            .then(resposta => {
+                if (resposta.status === 200) {
+                    console.log('Lista')
+                    console.log(resposta)
+                    setListaAlunos(resposta.data)
+                }
+            })
+            .catch(erro => console.log(erro))
+    }
+
+    useEffect(BuscarAlunos, []);
+
+    function Excluir(aluno) {
+        // aluno.preventDefault();
+        api.delete('/Alunos/' + idAlunos)
+
+            .then(resposta => {
+                if (resposta.status === 204) {
+                    console.log('Consulta Excluida')
+                }
+            })
+            .catch(erro => console.log(erro))
+    }
 
     return (
-        <div className="container_adm">
+        <div >
             <Header />
-            <section >
+            <Sidebar />
+            <section className="container_adm" >
                 <div >
 
-                    <form  className="">
+                    <form className="display" onSubmit={Excluir} >
 
                         <div className="posicao_foto">
                             <img
@@ -33,82 +64,34 @@ export default function Excluir() {
                         </div>
                         <div className="input_container">
 
-                            <input
-                                className="input"
-                                type="name"
-                                name="nome"
-                                placeholder="Nome do Aluno"
-                            // value={}
-                            // onChange={}                
-                            />
 
-                            <input
-                                className="input"
-                                type="file"
-                                name="arquivo"
-                                placeholder="Foto do Aluno"
-                            // value={}
-                            // onChange={}                
-                            />
 
                             <select
                                 className="input"
-                                name="Turma"
-                            // value={}
-                            // onChange={}
+                                name="alunos"
+                                id="alunos"
+                                value={idAlunos}
+                                onChange={(campo) => setIdAlunos(campo.target.value)}
                             >
-                                <option value="0">Turmas</option>
+                                <option value="0">Selecione o Aluno</option>
+
+                                {
+                                    listaAlunos.map((aluno) => {
+                                        return (
+                                            <option key={aluno.idAlunos} value={aluno.idAlunos}>
+                                                Nome: {aluno.nomeAluno} / RA:{aluno.ra} 
+                                            </option>
+                                        )
+                                    })}
                             </select>
-
-                            <select
-                                className="input"
-                                name="periodo"
-                            // value={}
-                            // onChange={}
-                            >
-                                <option value="0">Periodo</option>
-                            </select>
-
-
-
-
-                            <input
-                                className="input"
-                                type="datetime-local"
-                                name="dataDeNascimento"
-                            // value={}
-                            // onChange={}
-                            />
 
                             {
-                                isLoading === true && (
-                                    <button
-                                        type="submit"
-                                        disabled
-                                        className="btn btn_cadastro"
-                                        id=""
-                                    >
-                                        Loading...
-                                    </button>
-                                )
+                                isLoading === false &&
+                                <button type="submit" className="btn  btn_excluir"  >Excluir</button>
                             }
-
                             {
-
-                                isLoading === false && (
-                                    <button
-                                        className="btn btn_cadastro"
-                                        id=""
-                                        type="submit"
-                                        disabled={
-                                            nome === '' || periodo === ''
-                                                ? 'none'
-                                                : ''
-                                        }
-                                    >
-                                        Excluir
-                                    </button>
-                                )
+                                isLoading === true &&
+                                <button type="submit" disabled className="btn btn_cadastro">Loading...</button>
                             }
                         </div>
                     </form>
