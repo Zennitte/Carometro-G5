@@ -58,6 +58,7 @@ const routing = (
         {/* <PermissaoColab path = "/home" component={Home}/> */}
         <PermissaoAdm path = "/adm/aluno" component={Aluno}/>
         <PermissaoColab path = "/aluno" component={Aluno}/>
+        <Route path="/adm/login" component={Login}/>
         <Redirect to={Login}/>
       </Switch>
     </div>

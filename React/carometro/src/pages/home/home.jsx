@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
+import {Sidebar} from "../../components/sidebar/SideBar"
 
 import "../../assets/css/home.css";
 
@@ -46,13 +47,13 @@ export default function Home() {
   useEffect(listaManha);
 
   return (
-    <>
+    <>  
       <Header />
       <section className="container_home">
         <h2 className="titulo_periodo" style={{ marginTop: 50 }}>
           Período Tarde
         </h2>
-        <div>
+        {/* <div>
           {manha.map((sala) => {
             return (
               <div key={sala.idSala}>
@@ -60,7 +61,7 @@ export default function Home() {
               </div>
             );
           })}
-        </div>
+        </div> */}
         <h2 className="titulo_periodo">Período Manhã</h2>
         {/* <div>
                 {list.map((sala) =>{

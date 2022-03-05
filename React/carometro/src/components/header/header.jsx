@@ -2,19 +2,29 @@ import React from "react";
 
 import Logo from "../../assets/img/FaceCheck.svg";
 
-import '../../assets/css/header.css'
+import { usuarioAutenticado } from "../../services/auth";
+
+import { useHistory } from "react-router-dom";
+
+import "../../assets/css/header.css";
 
 export default function Header() {
+  let history = useHistory;
+
+  function logOut() {
+    localStorage.removeItem("usuario-login");
+
+    history.push("/login");
+  }
+
   return (
     <header className="container_header">
       <div className="grid_header">
         <div>
           <img className="header_logo" src={Logo} alt="Logo" />
         </div>
-        <button className="button">
-          Sair
-        </button>
+        <button onClick={logOut} className="button">Sair</button>
       </div>
     </header>
-  )
+  );
 }
