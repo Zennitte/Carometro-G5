@@ -6,6 +6,7 @@ import api from "../../services/api";
 
 import logo from '../../assets/img/FaceCheck.svg'
 import '../../assets/css/login.css'
+import { parseJwt } from "../../services/auth";
 
 
 export default function Login() {
@@ -38,7 +39,13 @@ export default function Login() {
 
                     setIsLoading(false)
 
-                    history.push('/adm')
+                    if (parseJwt().role === "1") {
+                        history.push('/adm')
+                    }
+                    if (parseJwt().role === "2") {
+                        history.push('/home')
+                    }
+                    
                 }
             })
             .catch(erro => {

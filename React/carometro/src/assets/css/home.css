@@ -4,15 +4,39 @@
   box-sizing: border-box;
 }
 
-.container_home{
-    background-color: #2E2E2E;
-    height: 850px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.container_home {
+  background-color: #2E2E2E;
+  height: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.titulo_periodo{
-    font-size: 24px;
-    color: white;
+.titulo_periodo {
+  font-size: 24px;
+  color: white;
 }
+
+.container_sala {
+  display: flex;
+  width: 600px;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.container_sala div {
+  width: 200px;
+  background-color: #3b86cc;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sala_texto{
+  color: white;
+  font-size: 24px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+

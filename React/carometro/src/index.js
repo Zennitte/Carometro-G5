@@ -60,7 +60,8 @@ const routing = (
         <PermissaoAdm path = "/alterar" component={Alterar}/>
         <PermissaoAdm path = "/excluir" component={Excluir}/>
         <PermissaoColab path = "/home" component={Home}/>
-        <PermissaoAdm path = "/adm/aluno" component={Aluno}/>
+        <PermissaoAdm path = "/adm/sala/1" component={Aluno}/>
+        <PermissaoAdm path = "/adm/sala/2" component={Aluno}/>
         <PermissaoColab path = "/aluno" component={Aluno}/>
         <Route path="/adm/login" component={Login}/>
         <Redirect to={Login}/>

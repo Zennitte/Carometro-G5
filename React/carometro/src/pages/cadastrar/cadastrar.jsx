@@ -7,6 +7,7 @@ import Header from '../../components/header/header'
 import Footer from '../../components/footer/footer'
 import api from "../../services/api"
 import { Sidebar } from "../../components/sidebar/SideBar";
+import { WebcamCapture } from "../../components/webcam/Webcam";
 
 
 
@@ -76,11 +77,14 @@ export default function Cadastrar() {
                     <form className="display" onSubmit={CadastrarAluno} >
 
                         <div className="posicao_foto">
-                            <img
+                            {/* <img
                                 className="foto_perfil"
                                 src={foto_perfil}
                                 alt="Adicione a sua foto"
-                            />  
+                            />   */}
+
+                            <WebcamCapture />
+
                         </div>
                         <div className="input_container">
 
