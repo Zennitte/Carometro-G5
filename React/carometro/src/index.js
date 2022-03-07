@@ -22,6 +22,7 @@ import reportWebVitals from './reportWebVitals';
 import Cadastrar from './pages/cadastrar/cadastrar';
 import Excluir from './pages/excluir/excluir';
 import Alterar from './pages/alterar/alterar';
+import Sala from './pages/aluno/sala';
 
 const PermissaoAdm = ({ component: Component }) => (
   <Route
@@ -60,8 +61,8 @@ const routing = (
         <PermissaoAdm path = "/alterar" component={Alterar}/>
         <PermissaoAdm path = "/excluir" component={Excluir}/>
         <PermissaoColab path = "/home" component={Home}/>
-        <PermissaoAdm path = "/adm/sala/1" component={Aluno}/>
-        <PermissaoAdm path = "/adm/sala/2" component={Aluno}/>
+        <Route path = "/Salas/1" component={Aluno}/>
+        <Route path = "/Salas/2" component={Sala}/>
         <PermissaoColab path = "/aluno" component={Aluno}/>
         <Route path="/adm/login" component={Login}/>
         <Redirect to={Login}/>

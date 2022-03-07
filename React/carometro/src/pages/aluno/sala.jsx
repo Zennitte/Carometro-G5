@@ -6,14 +6,14 @@ import api from "../../services/api";
 
 import '../../assets/css/aluno.css'
 import { Sidebar } from "../../components/sidebar/SideBar";
-import { parseJwt } from "../../services/auth";
 import { SideBarHome } from "../../components/sidebar/SideBarHome";
+import { parseJwt } from "../../services/auth";
 
-export default function Aluno() {
+export default function Sala() {
   const [listaAluno, setListaAlunos] = useState([]);
 
   function listarAlunos() {
-    api('/Alunos/sala/1')
+    api('/Alunos/sala/2')
       .then(resposta => {
         if (resposta.status === 200) {
           console.log('Lista')
@@ -29,14 +29,12 @@ export default function Aluno() {
   return (
     <>
       <Header />
-      <div>
-        {
-          parseJwt().role === "1" && <Sidebar />
-        }
-        {
-          parseJwt().role === "2" && <SideBarHome />
-        }
-      </div>
+      {
+        parseJwt().role === "1" && <Sidebar />
+      }
+      {
+        parseJwt().role === "2" && <SideBarHome />
+      }
       <section className="container_aluno">
         <h2 className="titulo_aluno" style={{ marginTop: 50 }}>
           Alunos
@@ -49,17 +47,13 @@ export default function Aluno() {
                 <div className="box_imagem">
                   {<img className="img" src={aluno.imagem} />}
                 </div>
-
-                <div className="box_dados">
-                  <p> Nome: 
-                    {aluno.nomeAluno} </p>
-                  <p> Data de Nascimento:       {Intl.DateTimeFormat("pt-BR", {
+                <div className="box_dados" >
+                 <p> Nome:  {aluno.nomeAluno} </p> 
+                 <p> Data de Nascimento: {Intl.DateTimeFormat("pt-BR", {
                     year: 'numeric', month: 'numeric', day: 'numeric'
-                  }).format(new Date(aluno.dataNascimento))}</p>
-                  <p> RA:
-                    {aluno.ra} </p>
+                  }).format(new Date(aluno.dataNascimento))} </p> 
+                 <p> Ra: {aluno.ra} </p> 
                 </div>
-
               </div>
             )
           })}

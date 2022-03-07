@@ -25,18 +25,38 @@
   margin-top: 100px;
 }
 
-.container_sala div {
+a {
+  text-decoration: none;
+}
+
+.container_sala a {
   width: 200px;
   background-color: #3b86cc;
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 30px;
+  color: white;
 }
 
-.sala_texto{
+.sala_texto {
   color: white;
   font-size: 24px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.box_sala{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+
+
+.box_sala :hover{
+  background-color: white;
+  color: #3b86cc;
+}

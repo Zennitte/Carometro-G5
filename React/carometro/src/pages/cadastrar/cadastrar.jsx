@@ -7,20 +7,22 @@ import Header from '../../components/header/header'
 import Footer from '../../components/footer/footer'
 import api from "../../services/api"
 import { Sidebar } from "../../components/sidebar/SideBar";
-import { WebcamCapture } from "../../components/webcam/Webcam";
+// import { WebcamCapture } from "../../components/webcam/Webcam";
 
 
 
 export default function Cadastrar() {
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading] = useState(false);
     const [nomeAluno, setNomeAluno] = useState('');
     const [dataNascimento, setDataNascimento] = useState(new Date())
     const [idSala, setIdSala] = useState(0)
-    const [idTurma, setIdTurma] = useState(0)
-    const [idPeriodo, setIdPeriodo] = useState(0)
-    const [idRa, setIdRa] = useState(0)
+    // const [idTurma, setIdTurma] = useState(0)
+    const [, setIdPeriodo] = useState(0)
+    const [ra, setIdRa] = useState(0)
     // const listaPeriodo = [1, 2]
     const listaTurma = [1, 2]
+    const [cadastrado, setCadastrado] = useState('')
+    const [erroMensagem, setErroMensagem] = useState('');
 
 
     function BuscarPeriodo() {
@@ -42,7 +44,7 @@ export default function Cadastrar() {
         idSala: idSala,
         nomeAluno: nomeAluno,
         dataNascimento: dataNascimento,
-        ra: idRa
+        ra: ra
     }
 
 
@@ -56,12 +58,18 @@ export default function Cadastrar() {
             .then(response => {
                 if (response.status === 201) {
                     console.log('Aluno cadastrado')
+                    setCadastrado("Aluno Cadastrado!")
                     setDataNascimento(new Date());
                     setIdSala(0);
                     setNomeAluno('');
                     setIdRa(0);
+                    
                 }
-            }).catch(erro => { console.log(erro) })
+            }).catch(erro => {
+                console.log(erro)
+
+                setErroMensagem("Aluno não cadastrado!")
+            })
     }
 
 
@@ -77,13 +85,13 @@ export default function Cadastrar() {
                     <form className="display" onSubmit={CadastrarAluno} >
 
                         <div className="posicao_foto">
-                            {/* <img
+                            <img
                                 className="foto_perfil"
                                 src={foto_perfil}
                                 alt="Adicione a sua foto"
-                            />   */}
+                            />
 
-                            <WebcamCapture />
+                            {/* <WebcamCapture /> */}
 
                         </div>
                         <div className="input_container">
@@ -99,9 +107,9 @@ export default function Cadastrar() {
                             <input
                                 className="input"
                                 type="text"
-                                name="ra"
+                                name="RA"
                                 placeholder="RA do Aluno"
-                                value={idRa}
+                                value={ra}
                                 onChange={(campo) => setIdRa(campo.target.value)}
                             />
 
@@ -117,8 +125,8 @@ export default function Cadastrar() {
                             <select
                                 className="input"
                                 name="Turma"
-                                value={idTurma}
-                                onChange={(campo) => setIdTurma(campo.target.value)}
+                                value={idSala}
+                                onChange={(campo) => setIdSala(campo.target.value)}
                             >
                                 <option value="0">Turmas</option>
                                 <option value={listaTurma[0]}> 1A </option>
@@ -147,6 +155,11 @@ export default function Cadastrar() {
                                 value={dataNascimento}
                                 onChange={(campo) => setDataNascimento(campo.target.value)}
                             />
+
+                            <span className='error'>{erroMensagem === '' ? '' : 'Aluno não cadastrado!'}</span>
+
+                            <span className='green'>{cadastrado === '' ? '' : 'Aluno cadastrado!'}</span>
+
                             {
                                 isLoading === false &&
                                 <input type="submit" className="btn btn_cadastro" value="Cadastrar" />

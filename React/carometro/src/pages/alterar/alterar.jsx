@@ -6,6 +6,7 @@ import Header from '../../components/header/header'
 import Footer from '../../components/footer/footer'
 import api from "../../services/api"
 import { Sidebar } from "../../components/sidebar/SideBar";
+import { WebcamCapture } from "../../components/webcam/Webcam";
 
 
 
@@ -15,11 +16,14 @@ export default function Cadastrar() {
     const [dataNascimento, setDataNascimento] = useState(new Date())
     const [idSala, setIdSala] = useState(0)
     const [idTurma, setIdTurma] = useState(0)
-    const [idPeriodo, setIdPeriodo] = useState(0)
-    const [idAluno, setIdAluno] = useState(0)
+    // const [idPeriodo, setIdPeriodo] = useState(0)
+    // const [idAluno, setIdAluno] = useState(0)
     const [idRa, setIdRa] = useState(0)
     // const listaPeriodo = [1, 2]
     const listaTurma = [1, 2]
+    const [idAlunos, setIdAlunos] = useState(0)
+    const [listaAlunos, setListaAlunos] = useState([])
+    const imagem = useState('')
 
 
     function BuscarAlunos() {
@@ -31,8 +35,8 @@ export default function Cadastrar() {
 
             .then(resposta => {
                 if (resposta.status === 200) {
-                    console.log(resposta)
-                    setIdPeriodo(resposta.data)
+                    console.log('Lista')
+                    setListaAlunos(resposta.data)
                 }
             })
             .catch(erro => console.log(erro))
@@ -45,24 +49,21 @@ export default function Cadastrar() {
 
     function AlterarAluno(event) {
         setIsLoading(true)
+        event.preventDefault();
 
         let alunos = {
             idSala: idSala,
-            nomeAluno: nomeAluno,
-            dataNascimento: dataNascimento,
-            ra: idRa
+            imagem: imagem
         }
 
-        api.put('/Alunos/' + idAluno, alunos, {
+        api.put('/Alunos/' + idAlunos, alunos, {
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
             }
         })
             .then((resposta) => {
-                if (resposta.status === 200) {
+                if (resposta.status === 204) {
                     console.log('Aluno Atualizado')
-
-                    BuscarAlunos();
                     setIsLoading(false);
                 }
             })
@@ -87,68 +88,73 @@ export default function Cadastrar() {
                                 src={foto_perfil}
                                 alt="Adicione a sua foto"
                             />  
+                            {/* <WebcamCapture /> */}
                         </div>
                         <div className="input_container">
 
-                            <input
+                        <select
+                                className="input"
+                                name="alunos"
+                                id="alunos"
+                                value={idAlunos}
+                                onChange={(campo) => setIdAlunos(campo.target.value)}
+                            >
+                                <option value="0">Selecione o Aluno</option>
+
+                                {
+                                    listaAlunos.map((aluno) => {
+                                        return (
+                                            <option key={aluno.idAlunos} value={aluno.idAlunos}>
+                                                Nome: {aluno.nomeAluno} / RA:{aluno.ra} 
+                                            </option>
+                                        )
+                                    })}
+                            </select>
+
+                            {/* <input
                                 className="input"
                                 type="name"
                                 name="nome"
                                 placeholder="Nome do Aluno"
                                 value={nomeAluno}
                                 onChange={(campo) => setNomeAluno(campo.target.value)}
-                            />
-                            <input
+                            /> */}
+                            {/* <input
                                 className="input"
                                 type="text"
                                 name="ra"
                                 placeholder="RA do Aluno"
                                 value={idRa}
                                 onChange={(campo) => setIdRa(campo.target.value)}
-                            />
+                            /> */}
 
-                            <input
+                            {/* <input
                                 className="input"
                                 type="file"
                                 name="arquivo"
                                 placeholder="Foto do Aluno"
                             // value={}
                             // onChange={}                
-                            />
+                            /> */}
 
                             <select
                                 className="input"
                                 name="Turma"
-                                value={idTurma}
-                                onChange={(campo) => setIdTurma(campo.target.value)}
+                                value={idSala}
+                                onChange={(campo) => setIdSala(campo.target.value)}
                             >
                                 <option value="0">Turmas</option>
                                 <option value={listaTurma[0]}> 1A </option>
                                 <option value={listaTurma[1]}> 1B </option>
                             </select>
-
-                            {/* <select
-                                className="input"
-                                name="periodo"
-                                value={idPeriodo}
-                                onChange={(campo) => setIdPeriodo(campo.target.value)}
-                            >
-                                <option value="0"> Selecione o Periodo</option>
-                                <option value={listaPeriodo[0]}> Manhã </option>
-                                <option value={listaPeriodo[1]}> Tarde </option>
-
-                            </select> */}
-
-
-
-
-                            <input
+                                    
+                            {/* <input
                                 className="input"
                                 type="date"
                                 name="dataDeNascimento"
                                 value={dataNascimento}
                                 onChange={(campo) => setDataNascimento(campo.target.value)}
-                            />
+                            /> */}
                             {
                                 isLoading === false &&
                                 <button type="submit" className="btn btn_cadastro"  >Alterar</button>

@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 
 import Webcam from 'react-webcam'
+import '../../assets/css/webcam.css'
 
-const WebcamComponent = () => <Webcam/>
+// const WebcamComponent = () => <Webcam/>
 
 const videoConstraints = {
-    width: 420,
-    height: 400,
+    width: 320,
+    height: 300,
     facingMode: "user"
 };
 
@@ -24,31 +25,31 @@ export const WebcamCapture = () => {
 
     return(
         <div className='webcam-container'>
-            <div>
-                {image == '' ? <Webcam
+            <div  >
+                {image === '' ? <Webcam
                     audio={false}
-                    height={400}
+                    height={300}
                     ref={webcamRef}
                     screenshotFormat="image/jpeg"
-                    width={420}
+                    width={320}
                     frameBorder={50}
                     videoConstraints={videoConstraints}
 
                 /> : <img src={image} alt="Imagem Capturada"/>}
             </div>
             <div>
-            {image != '' ?
+            {image !== '' ?
                     <button onClick={(e) => {
                         e.preventDefault();
                         setImage('')
                     }}
-                        className="webcam-btn">
+                        className="input_file btn ">
                         Tirar Outra Foto</button> :
                     <button onClick={(e) => {
                         e.preventDefault();
                         capture();
                     }}
-                        className="webcam-btn">Tirar Foto</button>
+                        className="input_file btn ">Tirar Foto</button>
                 }
             </div>
         </div>

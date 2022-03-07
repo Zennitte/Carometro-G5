@@ -7,15 +7,16 @@
 .imagem{
     display: flex;
     justify-content: center;
-    /* padding: 15vw;
-    padding-left: 15vw;
-    width: 20vw;
-    height: 20vh; */
+    /* padding: 15vw; */
+    /* padding-left: 15vw; */
+    /* width: 20vw; */
+    /* height: 20vh; */
+
 }
 
 .logo{
     margin-top: 10vh;
-    margin-left: 3vw;
+    margin-left: 4.5vw;
 }
 
 .inputs{
@@ -50,10 +51,12 @@
   .input_login:focus {
     border: 0;
     border-bottom: 1px solid #6f47ff;
+    
     text-align: center;
     background: transparent;
     color: white;
     text-align: left;
+    outline: 0;
   }
 
   ::-webkit-input-placeholder {
@@ -70,7 +73,7 @@
     color: white;
     background-color: #183861;
     border: none;
-    margin-left: 4vh;
+    margin-left: 6.5vh;
 }
 .btn:hover{
     background-color: #D5E1FA;

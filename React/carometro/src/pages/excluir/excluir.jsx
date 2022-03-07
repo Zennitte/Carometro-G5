@@ -10,9 +10,10 @@ import { Sidebar } from "../../components/sidebar/SideBar";
 
 
 export default function Cadastrar() {
-    const [isLoading, ] = useState(false);
+    const [isLoading,] = useState(false);
     const [idAlunos, setIdAlunos] = useState(0)
     const [listaAlunos, setListaAlunos] = useState([])
+    const [fotoAtiva, setFotoAtiva] = useState('')
 
 
     function BuscarAlunos() {
@@ -34,16 +35,38 @@ export default function Cadastrar() {
 
     useEffect(BuscarAlunos, []);
 
+    function buscarImagem(event) {
+        api('/Alunos/aluno/' + event.idAlunos, )
+
+            .then(resposta => {
+                if (resposta.status === 200) {
+                    console.log('Imagem')
+                    console.log(resposta)
+                    setIdAlunos(resposta.data.imagem)
+                    // setFotoAtiva(resposta.data.imagem)
+                }
+            })
+            .catch(erro => console.log(erro))
+    }
+
+    useEffect(buscarImagem, []);
+
+
+
     function Excluir(aluno) {
         // aluno.preventDefault();
         api.delete('/Alunos/' + idAlunos)
 
             .then(resposta => {
                 if (resposta.status === 204) {
-                    console.log('Consulta Excluida')
+                    console.log('Aluno Excluido')
                 }
             })
             .catch(erro => console.log(erro))
+    }
+
+    function buscarImagem(){
+        
     }
 
     return (
@@ -79,7 +102,7 @@ export default function Cadastrar() {
                                     listaAlunos.map((aluno) => {
                                         return (
                                             <option key={aluno.idAlunos} value={aluno.idAlunos}>
-                                                Nome: {aluno.nomeAluno} / RA:{aluno.ra} 
+                                                Nome: {aluno.nomeAluno} / RA:{aluno.ra}
                                             </option>
                                         )
                                     })}
